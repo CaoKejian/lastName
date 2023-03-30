@@ -1,11 +1,11 @@
 class CreateItems < ActiveRecord::Migration[7.0]
   def change
     create_table :items do |t|
-      t.bigint :user_id, array: true
+      t.bigint :user_id
       t.integer :amount
       t.text :note
-      t.integer :tags_id
-      t.datetime :thappen_at
+      t.bigint :tags_id, array: true
+      t.datetime :happen_at
 
       t.timestamps
     end
