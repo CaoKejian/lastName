@@ -15,13 +15,14 @@ RSpec.describe "Items", type: :request do
       expect(json["resources"].size).to eq 1
     end
     it '按时间筛选' do
-      item1 = Item.create amount: 100,created_at: Time.new(2022, 1, 2)
-      item2 = Item.create amount: 100,created_at: Time.new(2023, 1, 1)
+      item1 = Item.create amount: 100,created_at: '2022-01-02'
+      item2 = Item.create amount: 100,created_at: '2022-01-02'
       get '/api/v1/items?created_after=2022-01-01&created_before=2022-01-03'
       expect(response).to have_http_status 200
       json = JSON.parse(response.body)
       expect(json["resources"].size).to eq 1
       expect(json["resources"][0]['id']).to eq item1.id
+      expect(json["resources"][1]['id']).to eq item2.id
     end
   end
   describe "create" do
