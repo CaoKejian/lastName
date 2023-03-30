@@ -112,6 +112,25 @@ table th, table td {
         <h2>请求发送验证码</h2>
         <h3>POST /api/v1/validation_codes</h3>
 
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                    <span class="name">email</span>
+                </td>
+                <td>
+                  <span class="description">Email</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
 
           <h3>Request</h3>
@@ -126,6 +145,8 @@ Cookie: </pre>
           <pre class="request route highlight">POST /api/v1/validation_codes</pre>
 
 
+            <h4>Body</h4>
+            <pre class="request body">email=1%40qq.com</pre>
 
 
             <h3>Response</h3>
@@ -137,12 +158,13 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
-Cache-Control: no-cache
-X-Request-Id: ffb82c4a-ef57-4647-b3a0-4424cde77b10
-X-Runtime: 0.034965
-Content-Length: 39</pre>
+ETag: W/&quot;e9deddc56d0e593a562a1faab77721ff&quot;
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 91ed24f3-61d5-4a86-a58a-ffc1419178c5
+X-Runtime: 0.024134
+Content-Length: 17</pre>
             <h4>Status</h4>
-            <pre class="response status">422 Unprocessable Entity</pre>
+            <pre class="response status">200 OK</pre>
               <h4>Body</h4>
               <pre class="response body">[binary data]</pre>
       </div>
