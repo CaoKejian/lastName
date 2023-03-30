@@ -118,6 +118,8 @@ table th, table td {
 
             <h4>Headers</h4>
             <pre class="request headers">Version: HTTP/1.0
+Accept: application/json
+Content-Type: application/json
 Host: example.org
 Cookie: </pre>
 
@@ -136,15 +138,25 @@ X-Download-Options: noopen
 X-Permitted-Cross-Domain-Policies: none
 Referrer-Policy: strict-origin-when-cross-origin
 Content-Type: application/json; charset=utf-8
+Vary: Accept
 ETag: W/&quot;bf702ba9291e498576803fbd69ad7615&quot;
 Cache-Control: max-age=0, private, must-revalidate
-X-Request-Id: c776b70b-1d65-4615-892f-23f235789806
-X-Runtime: 0.027298
+X-Request-Id: 4b1e7e19-feee-4321-bd5e-7c59f87e5d27
+X-Runtime: 0.028895
 Content-Length: 63</pre>
             <h4>Status</h4>
             <pre class="response status">200 OK</pre>
               <h4>Body</h4>
-              <pre class="response body">[binary data]</pre>
+              <pre class="response body">{
+  &quot;resources&quot;: [
+
+  ],
+  &quot;pager&quot;: {
+    &quot;page&quot;: null,
+    &quot;per_page&quot;: 100,
+    &quot;count&quot;: 0
+  }
+}</pre>
       </div>
     </div>
   </body>
