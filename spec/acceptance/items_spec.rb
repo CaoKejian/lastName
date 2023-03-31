@@ -16,7 +16,16 @@ resource "账目" do
     # let(:current_user) { User.create email: '1@qq.com' }
     # let(:auth) { "Bearer #{current_user.generate_jwt}" }
     example "获取账目" do
-      11.times do Item.create amount: 100, created_at: '2020-10-30' end
+      user1 = User.create email: '1@qq.com'
+      11.times do Item.create amount: 100, created_at: '2020-10-30',
+      user_id: user1.id  end
+      jwt = ''
+      no_doc do
+        client.post '/api/v1/session', email: user1.email,code: '123456'
+        json = JSON.parse response_body
+        jwt = json['jwt']
+      end
+      header 'Authorization', "Bearer #{jwt}"
       do_request
       expect(status).to eq 200
       json = JSON.parse response_body
